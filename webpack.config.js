@@ -2,12 +2,14 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const path = require("path");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
 
 const resolve = dir => path.join(__dirname, "..", dir);
 
 const config = {
 	output: {
-		path: path.resolve(__dirname, "dist")
+		path: path.resolve(__dirname, "dist"),
+		publicPath: "/"
 	},
 	resolve: {
 		extensions: [".js", ".vue"],
@@ -20,6 +22,14 @@ const config = {
 			{
 				test: /\.vue$/,
 				loader: "vue-loader"
+				// options: {
+				// 	loaders: {
+				// 		css: ExtractTextWebpackPlugin.extract({
+				// 			use: "css-loader",
+				// 			fallback: "vue-style-loader"
+				// 		})
+				// 	}
+				// }
 			},
 			{
 				test: /\.js$/,
@@ -33,33 +43,35 @@ const config = {
 		]
 	},
 	plugins: [
-		new UglifyJsPlugin({
-			uglifyOptions: {
-				sourcemap: false,
-				minimize: true,
-				compress: {
-					warnings: false
-				}
+		new webpack.optimize.UglifyJsPlugin({
+			minimize: true,
+			sourceMap: false,
+			mangle: true,
+			compress: {
+				warnings: false
 			}
 		})
+		// new ExtractTextWebpackPlugin({
+		// 	filename: "[name].css"
+		// })
 	]
 };
 
 module.exports = [
 	merge(config, {
-		entry: path.resolve(__dirname, "./src/plugin.js"),
+		entry: path.resolve(__dirname + "/src/plugin.js"),
 		output: {
-			filename: "vue2-datetimepicker.js",
+			filename: `[name].web.js`,
 			libraryTarget: "window",
 			library: "DateTimePicker"
 		}
 	}),
 	merge(config, {
-		entry: path.resolve(__dirname, "./src/DateTimePicker"),
+		entry: path.resolve(__dirname + "/src/DateTimePicker"),
 		output: {
-			filename: "vue2-datetimepicker.js",
+			filename: `[name].node.js`,
 			libraryTarget: "umd",
-			library: "DateTimePicker",
+			library: "vue2-datetimepicker",
 			umdNamedDefine: true
 		}
 	})
