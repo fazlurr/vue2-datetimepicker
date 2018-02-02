@@ -1,8 +1,8 @@
 {
 	"name": "simple-vue2-datetimepicker",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "a simple datetimepicker for vue2",
-	"main": "src/plugin.js",
+	"main": "dist/bundle.min.js",
 	"repository": {
 		"url": "https://github.com/jamespjarvis/vue2-datetimepicker",
 		"type": "git"
