@@ -1,10 +1,13 @@
 {
-	"name": "vue2-datetimepicker",
+	"name": "simple-vue2-datetimepicker",
 	"version": "0.1.0",
 	"description": "a simple datetimepicker for vue2",
-	"main": "index.js",
-	"repository": " https://github.com/jamespjarvis/vue2-datetimepicker",
-	"author": "James Jarvis",
+	"main": "src/plugin.js",
+	"repository": {
+		"url": "https://github.com/jamespjarvis/vue2-datetimepicker",
+		"type": "git"
+	},
+	"author": "James Jarvis <jamespjarvis@gmail.com>",
 	"license": "MIT",
 	"scripts": {
 		"build": "webpack --config ./webpack.config.js",
