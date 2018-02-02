@@ -1,6 +1,6 @@
 {
 	"name": "simple-vue2-datetimepicker",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "a simple datetimepicker for vue2",
 	"main": "dist/bundle.min.js",
 	"repository": {
