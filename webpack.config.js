@@ -51,7 +51,7 @@ module.exports = [
 		output: {
 			filename: "vue2-datetimepicker.js",
 			libraryTarget: "window",
-			library: "Vue2-DateTimePicker"
+			library: "DateTimePicker"
 		}
 	}),
 	merge(config, {
@@ -59,7 +59,7 @@ module.exports = [
 		output: {
 			filename: "vue2-datetimepicker.js",
 			libraryTarget: "umd",
-			library: "Vue2-DateTimePicker",
+			library: "DateTimePicker",
 			umdNamedDefine: true
 		}
 	})
