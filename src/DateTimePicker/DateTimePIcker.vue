@@ -32,9 +32,9 @@ import {
 	minutes
 } from "./utils";
 
-import DateTime from "./DateTime";
-import TimePicker from "./TimePicker";
-import DatePicker from "./DatePicker";
+import DateTime from "./DateTime.vue";
+import TimePicker from "./TimePicker.vue";
+import DatePicker from "./DatePicker.vue";
 
 export default {
 	name: "DateTimePicker",

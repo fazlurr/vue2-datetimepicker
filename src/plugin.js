@@ -7,4 +7,5 @@ DateTimePicker.install = function(Vue) {
 if (typeof window !== "undefined" && window.Vue) {
 	window.Vue.use(DateTimePicker);
 }
+
 export default DateTimePicker;
