@@ -1,0 +1,25 @@
+{
+	"name": "vue2-datetimepicker",
+	"version": "0.1.0",
+	"description": "a simple datetimepicker for vue2",
+	"main": "index.js",
+	"repository": " https://github.com/jamespjarvis/vue2-datetimepicker",
+	"author": "James Jarvis",
+	"license": "MIT",
+	"scripts": {
+		"build": "webpack --config ./webpack.config.js"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-stage-3": "^6.24.1",
+		"css-loader": "^0.28.9",
+		"uglifyjs-webpack-plugin": "^1.1.8",
+		"vue-loader": "^14.1.1",
+		"vue-style-loader": "^3.1.2",
+		"vue-template-compiler": "^2.5.13",
+		"webpack": "^3.10.0",
+		"webpack-merge": "^4.1.1"
+	}
+}
