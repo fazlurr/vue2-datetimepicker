@@ -28,7 +28,7 @@ https://unpkg.com/simple-vue2-datetimepicker@0.1.0/dist/main.web.js
 include script in html
 
 ```html
-<script src="https://unpkg.com/simple-vue2-datetimepicker@0.1.0/dist/main.web.js"></script>
+<script src="https://unpkg.com/simple-vue2-datetimepicker@0.3.0/dist/bundle.min.js"></script>
 ```
 
 component will automatically install
