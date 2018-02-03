@@ -10,7 +10,8 @@
 	"author": "James Jarvis <jamespjarvis@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "rollup -c"
+		"build": "rollup -c",
+		"watch": "rollup -c --watch"
 	},
 	"devDependencies": {
 		"postcss": "^6.0.17",

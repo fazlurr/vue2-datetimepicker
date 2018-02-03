@@ -1,11 +1,11 @@
 <template>
 	<div class="date-time-picker">
-		<DateTime :date="value" @update="editing = !editing" :editing="editing"></DateTime>
+		<DateTime :date="value" :options="options" @update="editing = !editing" :editing="editing"></DateTime>
 		<transition name="slide">
 			<div class="inputs" v-if="editing">
-				<DatePicker :value="currentDate" @input="d => updateDate(d)">
+				<DatePicker v-if="options.date" :value="currentDate" @input="d => updateDate(d)">
 				</DatePicker>
-				<TimePicker :value="currentDate" @input="d => updateTime(d)">
+				<TimePicker v-if="options.time" :value="currentDate" @input="d => updateTime(d)">
 				</TimePicker>
 			</div>
 		</transition>
@@ -47,6 +47,14 @@ export default {
 		value: {
 			type: Date,
 			default: () => new Date()
+		},
+		date: {
+			type: Boolean,
+			default: true
+		},
+		time: {
+			type: Boolean,
+			default: true
 		}
 	},
 	data() {
@@ -54,7 +62,11 @@ export default {
 			editing: false,
 			currentDate: new Date(),
 			hours,
-			minutes
+			minutes,
+			options: {
+				date: this.date,
+				time: this.time
+			}
 		};
 	},
 	methods: {
@@ -118,6 +130,10 @@ export default {
 	border-bottom-right-radius: 0.25rem;
 }
 
+.inputs > *:last-child {
+	border-bottom-left-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
 /* 
  *
  * DATE TIME
@@ -126,9 +142,10 @@ export default {
 
 .date-time {
 	display: flex;
+	user-select: none;
 }
 
-.date-time.open * {
+.date-time.open > * {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 }
