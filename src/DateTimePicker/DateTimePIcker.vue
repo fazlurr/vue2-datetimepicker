@@ -46,7 +46,7 @@ export default {
 	props: {
 		value: {
 			type: Date,
-			default: () => new Date()
+			required: true
 		},
 		date: {
 			type: Boolean,
